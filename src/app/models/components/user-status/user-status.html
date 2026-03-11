@@ -1,0 +1,10 @@
+<div>
+
+<p *ngIf="online">🟢 User is Online</p>
+<p *ngIf="!online">🔴 User is Offline</p>
+
+<button (click)="toggleStatus()">
+Toggle Status
+</button>
+
+</div>

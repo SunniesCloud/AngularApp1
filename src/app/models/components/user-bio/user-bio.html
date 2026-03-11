@@ -1,0 +1,12 @@
+<h3>About User</h3>
+
+<p>{{bio}}</p>
+
+<input
+type="text"
+[(ngModel)]="newBio"
+placeholder="Edit bio">
+
+<button (click)="saveBio()">
+Update Bio
+</button>
