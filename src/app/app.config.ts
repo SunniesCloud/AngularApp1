@@ -1,4 +1,5 @@
-import { provideForms } from '@angular/forms';
-providers: [
-provideForms()
-]
+import { ApplicationConfig } from '@angular/core';
+
+export const appConfig: ApplicationConfig = {
+  providers: []
+};

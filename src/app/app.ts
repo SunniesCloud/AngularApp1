@@ -3,16 +3,15 @@ import { User } from './models/user';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.html',
+  templateUrl: './app.component.html',
   styleUrls: ['./app.css']
 })
-
 export class AppComponent {
 
   user: User = {
     name: "Rowena Sasi",
-    bio: "Frontend developer learning Angular.",
-    profilePicture: "/Users/rowenasasi/Downloads/photo dp.heic",
+    bio: "Student learning Angular and frontend development.",
+    profilePicture: "/Users/rowenasasi/Downloads/ametrine.jpeg",
     online: true
   };
 
@@ -20,7 +19,7 @@ export class AppComponent {
     this.user.online = !this.user.online;
   }
 
-   updateBio(newBio:string){
+  updateBio(newBio: string){
     this.user.bio = newBio;
   }
 

@@ -1,0 +1,19 @@
+.card{
+  border:1px solid #ccc;
+  padding:20px;
+  width:300px;
+  text-align:center;
+  border-radius:10px;
+}
+
+img{
+  border-radius:50%;
+}
+h1{
+  color: darkblue;
+}
+
+button{
+  background-color: #4CAF50;
+  color: white;
+}
