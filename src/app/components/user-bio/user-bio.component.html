@@ -1,0 +1,46 @@
+<div class="bio-container">
+  <div class="bio-header">
+    <h3>
+      <span class="header-icon">📝</span>
+      About Me
+    </h3>
+    <span class="character-count">{{getCharacterCount()}}/200</span>
+  </div>
+  
+  <div class="bio-content">
+    <!-- Display mode -->
+    <div *ngIf="!isEditing" class="bio-display">
+      <p class="bio-text">{{bio || 'No bio added yet. Click edit to add one!'}}</p>
+      <button class="edit-button" (click)="startEditing()">
+        <span class="button-icon">✏️</span>
+        Edit Bio
+      </button>
+    </div>
+    <div class="bio-container">
+  <div class="bio-header">
+    <h3>
+      <span class="header-icon">📝</span>
+      About Me
+    </h3>
+    <span class="character-count">{{getCharacterCount()}}/200</span>
+  </div>
+  
+  <div class="bio-content">
+    
+    <div *ngIf="!isEditing" class="bio-display">
+      <p class="bio-text">{{bio || 'No bio added yet. Click edit to add one!'}}</p>
+      <button class="edit-button" (click)="startEditing()">
+        <span class="button-icon">✏️</span>
+        Edit Bio
+      </button>
+    </div>
+    </div>
+  </div>
+  
+  <div class="bio-footer" *ngIf="bio">
+    <div class="bio-stats">
+      <span class="stat">📊 {{bio.split(' ').length}} words</span>
+      <span class="stat">⏱️ Last updated: {{bio.length > 0 ? 'Today' : 'Never'}}</span>
+    </div>
+  </div>
+</div>

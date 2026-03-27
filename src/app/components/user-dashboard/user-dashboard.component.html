@@ -1,0 +1,67 @@
+<div class="dashboard">
+  <header class="dashboard-header">
+    <h1>
+      <span class="header-icon">👤</span>
+      User Profile Dashboard
+    </h1>
+    <div class="dashboard-info">
+      <span class="badge">Profile ID: {{user.id}}</span>
+      <span class="badge">Last updated: {{lastUpdated | date:'medium'}}</span>
+    </div>
+  </header>
+  
+  <div class="dashboard-grid">
+    
+    <div class="grid-item card-section">
+      <app-user-card 
+        [user]="user" 
+        [isOnline]="user.isOnline">
+      </app-user-card>
+      </div>
+
+    <div class="grid-item status-section">
+      <app-user-status 
+        [isOnline]="user.isOnline"
+        [userName]="user.name"
+        (statusChanged)="onStatusChanged($event)">
+      </app-user-status>
+    </div>
+    
+    <div class="grid-item bio-section">
+      <app-user-bio 
+        [bio]="user.bio"
+        (bioChanged)="onBioChanged($event)">
+      </app-user-bio>
+    </div>
+  </div>
+  
+  
+  <div class="info-panel">
+    <h3>📊 Dashboard Statistics</h3>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <span class="stat-label">Profile Completion</span>
+        <div class="progress-bar">
+          <div class="progress" [style.width.%]="85"></div>
+        </div>
+        <span class="stat-value">85%</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Account Age</span>
+        <span class="stat-value">{{user.joinDate | date:'yyyy'}}</span>
+      </div>
+      <div class="stat-card">
+         <span class="stat-label">Status Duration</span>
+        <span class="stat-value">{{user.isOnline ? 'Active now' : 'Away'}}</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Timezone</span>
+        <span class="stat-value">PST (UTC-8)</span>
+      </div>
+    </div>
+  </div>
+  
+  <footer class="dashboard-footer">
+    <p>© {{getCurrentDate() | date:'2026'}} User Dashboard - Built with Angular</p>
+  </footer>
+</div>

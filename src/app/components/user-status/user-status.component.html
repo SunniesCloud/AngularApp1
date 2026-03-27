@@ -1,0 +1,22 @@
+<div class="status-container" [class.online]="isOnline" [class.offline]="!isOnline">
+  <div class="status-header">
+    <span class="greeting">{{getStatusMessage()}}</span>
+    <span class="status-badge">
+      <span class="status-dot"></span>
+      {{isOnline ? 'Online' : 'Offline'}}
+    </span>
+  </div>
+  
+  <div class="status-actions">
+    <p class="status-text">
+      Currently <strong>{{isOnline ? 'available' : 'unavailable'}}</strong>
+    </p>
+    <button class="toggle-button" (click)="toggleStatus()">
+      <span class="button-icon">{{isOnline ? '🔴' : '🟢'}}</span>
+      {{isOnline ? 'Go Offline' : 'Go Online'}}
+    </button>
+  </div>
+  <div class="status-footer" *ngIf="!isOnline">
+    <p>📝 Away messages will not be delivered while offline</p>
+  </div>
+</div>

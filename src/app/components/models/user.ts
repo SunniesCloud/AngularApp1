@@ -1,5 +1,12 @@
 export interface User {
+  id: number;
   name: string;
+  age: number;
+  email: string;
+  profilePicture: string;
+  isOnline: boolean;
   bio: string;
-  online: boolean;
+  location: string;
+  occupation: string;
+  joinDate: Date;
 }
